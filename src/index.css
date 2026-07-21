@@ -1,0 +1,56 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  body {
+    @apply transition-colors duration-300 font-sans text-grayDark dark:text-grayLight bg-light dark:bg-dark;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-heading;
+  }
+  
+  ::-webkit-scrollbar {
+    width: 8px;
+  }
+  
+  ::-webkit-scrollbar-track {
+    @apply bg-grayLight dark:bg-dark;
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    @apply bg-primary/50 rounded-full hover:bg-primary;
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply px-6 py-3 bg-primary text-white rounded-full font-medium hover:bg-accent hover:shadow-lg hover:shadow-primary/30 transition-all duration-300 flex items-center justify-center gap-2;
+  }
+  
+  .btn-outline {
+    @apply px-6 py-3 border-2 border-primary text-primary dark:text-white dark:border-white rounded-full font-medium hover:bg-primary hover:text-white hover:border-transparent transition-all duration-300 flex items-center justify-center gap-2;
+  }
+  
+  .section-title {
+    @apply text-3xl md:text-4xl font-semibold mb-12 text-center relative;
+  }
+  
+  .section-title::after {
+    content: '';
+    @apply absolute -bottom-4 left-1/2 -translate-x-1/2 w-16 h-1 bg-primary rounded-full;
+  }
+
+  .glass-card {
+    @apply bg-white/70 dark:bg-grayDark/50 backdrop-blur-lg border border-gray-200 dark:border-gray-700 rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-300;
+  }
+}
+
+.gradient-text {
+  @apply bg-clip-text text-transparent bg-gradient-to-r from-primary to-green-400;
+}
